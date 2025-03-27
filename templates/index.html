@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Revenue Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        /* Full-page background with blur effect */
+        body {
+            background: url('https://cdn.celluloidjunkie.com/wp-content/uploads/2024/07/16120608/2024-Film-Releases-First-Half.jpg') no-repeat center center/cover;
+            /* backdrop-filter: blur(3px); */
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        /* Centered form container with transparency */
+        .container {
+            backdrop-filter: blur(3px);
+            margin-top: 200px;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            animation: slideUp 1s ease-in-out;
+            max-width: 400px;
+        }
+
+        /* Smaller input fields */
+        .form-control {
+            height: 35px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.4);
+            color: black;
+        }
+
+        /* Styled button with hover effect */
+        .btn-custom {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            border: none;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h3 class="mb-3">🎬 Movie Revenue Predictor 🎥</h3>
+        <form action="/predict" method="post">
+            <input type="number" class="form-control mb-2" name="year_of_release" placeholder="Year of Release" required>
+            <input type="number" class="form-control mb-2" name="metascore" placeholder="Metascore" required>
+            <input type="number" class="form-control mb-2" name="budget" placeholder="Budget" required>
+            <input type="number" class="form-control mb-2" name="runtime" placeholder="Runtime (minutes)" required>
+            <input type="number" class="form-control mb-2" name="votes" placeholder="Votes" required>
+            <input type="number" class="form-control mb-2" name="imdb_rating" placeholder="IMDB Rating" step="0.1" required>
+
+            <select class="form-control mb-3" name="genre">
+                <option value="Genre_Action">Action</option>
+                <option value="Genre_Comedy">Comedy</option>
+                <option value="Genre_Drama">Drama</option>
+                <option value="Genre_Horror">Horror</option>
+                <option value="Genre_SciFi">Sci-Fi</option>
+            </select>
+
+            <button type="submit" class="btn btn-custom">Predict Revenue 🚀</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Flask==2.2.5
+numpy==1.24.3
+scikit-learn==1.2.2
+pickle5==0.0.12
+gunicorn==20.1.0
